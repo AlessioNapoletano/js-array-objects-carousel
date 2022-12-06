@@ -27,29 +27,40 @@ const images = [
 ];
 
 
+
 const carouselImg = document.getElementById("img");
 
-let number = 1;
-carouselImg.src = `./img/0${number}.webp`
+
 const nextImage = document.getElementById("next");
 const backImage = document.getElementById("back");
 
-nextImage.addEventListener("click", function () {
-    if (number >= 5) {
-        number = 1;
-    } else {
-        number++;
-    }
-    carouselImg.src = `./img/0${number}.webp`;
+let counter = 1;
+carouselImg.src = `./img/0${counter}.webp`
 
-    console.log(number);
+images.forEach((image) => {
+    image.image = counter;
+    counter++;
+});
+
+
+
+
+nextImage.addEventListener("click", function () {
+    if (counter >= 5) {
+        counter = 1;
+    } else {
+        counter++;
+    }
+    carouselImg.src = `./img/0${counter}.webp`;
+
+    console.log(counter);
 });
 backImage.addEventListener("click", function () {
-    if (number === 1) {
-        number = 5;
+    if (counter === 1) {
+        counter = 5;
     } else {
-        number--;
+        counter--;
     }
-    carouselImg.src = `./img/0${number}.webp`;
-    console.log(number);
+    carouselImg.src = `./img/0${counter}.webp`;
+    console.log(counter);
 });
