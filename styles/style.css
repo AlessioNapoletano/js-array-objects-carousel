@@ -12,6 +12,11 @@ main{
     height: 100%;
     object-fit: cover;
 }
+
+#next,
+#back{
+    cursor: pointer;
+}
 div.carousel-wrapper{
     width: 77%;
     height: 680px;
